@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #f5e6d3;
+    font-family: Georgia, serif;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 600px;
+    overflow: hidden;
+    background: linear-gradient(#fff2df, #d9ad83);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-size: 50px;
+    margin-top: 30px;
+    opacity: 0;
+    animation: logoLoop 8s ease-in-out infinite;
+}
+
+.shop-name {
+    color: #58351f;
+    font-size: 38px;
+    margin-top: 5px;
+    opacity: 0;
+    animation: nameLoop 8s ease-in-out infinite;
+}
+
+.tagline {
+    color: #704b35;
+    margin-top: 8px;
+    opacity: 0;
+    animation: taglineLoop 8s ease-in-out infinite;
+}
+
+.heart {
+    position: absolute;
+    top: 255px;
+    font-size: 32px;
+    color: #c83e4d;
+    opacity: 0;
+    transform: scale(0);
+    animation: heartLoop 8s ease-in-out infinite;
+}
+
+.coffee-machine {
+    position: absolute;
+    top: 310px;
+    width: 100px;
+    height: 30px;
+    background: #593923;
+    border-radius: 8px 8px 3px 3px;
+    z-index: 2;
+}
+
+.coffee-machine::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 18px;
+    background: #79543a;
+    top: -18px;
+    left: 27px;
+    border-radius: 5px 5px 0 0;
+}
+
+.stream {
+    position: absolute;
+    top: 30px;
+    left: 46px;
+    width: 7px;
+    height: 0;
+    background: #593016;
+    border-radius: 5px;
+    animation: streamLoop 8s ease-in-out infinite;
+}
+
+.cup {
+    position: absolute;
+    top: 370px;
+    width: 125px;
+    height: 85px;
+    background: #fffaf0;
+    border: 4px solid #754a30;
+    border-radius: 8px 8px 35px 35px;
+    z-index: 1;
+}
+
+.coffee {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    width: 109px;
+    height: 0;
+    background: #6f351b;
+    border-radius: 50% 50% 20% 20%;
+    animation: coffeeLoop 8s ease-in-out infinite;
+}
+
+.cup-handle {
+    position: absolute;
+    right: -32px;
+    top: 15px;
+    width: 30px;
+    height: 40px;
+    border: 7px solid #754a30;
+    border-radius: 0 18px 18px 0;
+}
+
+.steam {
+    position: absolute;
+    top: 320px;
+    width: 15px;
+    height: 35px;
+    border-left: 3px solid rgba(255, 250, 240, 0.9);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 3;
+    animation: steamLoop 8s ease-in-out infinite;
+}
+
+.steam1 {
+    left: calc(50% - 25px);
+}
+
+.steam2 {
+    left: 50%;
+}
+
+.steam3 {
+    left: calc(50% + 25px);
+}
+
+.welcome {
+    position: absolute;
+    bottom: 65px;
+    color: #58351f;
+    letter-spacing: 4px;
+    font-size: 12px;
+    opacity: 0;
+    animation: welcomeLoop 8s ease-in-out infinite;
+}
+
+
+@keyframes logoLoop {
+    0%, 5% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    15%, 85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    95%, 100% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes nameLoop {
+    0%, 5% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    18%, 82% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    95%, 100% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes taglineLoop {
+    0%, 10% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    20%, 82% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    95%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes heartLoop {
+    0%, 35% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    43% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    48%, 82% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    92%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes streamLoop {
+    0%, 20% {
+        height: 0;
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        height: 40px;
+    }
+    42% {
+        height: 40px;
+        opacity: 1;
+    }
+    48%, 100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes coffeeLoop {
+    0%, 20% {
+        height: 0;
+    }
+    42% {
+        height: 35px;
+    }
+    82% {
+        height: 35px;
+    }
+    95%, 100% {
+        height: 0;
+    }
+}
+
+@keyframes steamLoop {
+    0%, 40% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    55% {
+        opacity: 0.8;
+        transform: translateY(-10px);
+    }
+    70% {
+        opacity: 0.5;
+        transform: translateY(-25px);
+    }
+    85%, 100% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes welcomeLoop {
+    0%, 25% {
+        opacity: 0;
+    }
+    40%, 82% {
+        opacity: 1;
+    }
+    95%, 100% {
+        opacity: 0;
+    }
+}
